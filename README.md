@@ -157,4 +157,4 @@ useEffect(() => {
 
 ## 👨‍💻 Author
 
-Built and maintained by a frontend engineer with over **10 years of experience** in building scalable, maintainable UI architectures.
+Built and maintained by a frontend engineer with over **4 years of experience** in building scalable, maintainable UI architectures.

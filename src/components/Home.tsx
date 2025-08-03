@@ -30,11 +30,8 @@ export default function Home() {
     let tempUrl = "products";
     if(id && validateData(id,letterRegex)){
       tempUrl += "/category?type=" + id;
-      getProductList(tempUrl);
-    }else {
-      alert("Invalid data")
-      setLoader(false);
     }
+    getProductList(tempUrl);
   }, [id]);
 
   if (loader) {
