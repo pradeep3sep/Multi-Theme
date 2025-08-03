@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import { getApi } from "../lib/apiCalls";
 import type { Product, ProductListResult } from "../types/theme";
 import Loading from "./Loading";
+import { validateData } from "../lib/utils";
+import { letterRegex } from "../constant";
 
 export default function Home() {
   const { id } = useParams();
@@ -26,10 +28,13 @@ export default function Home() {
 
   useEffect(() => {
     let tempUrl = "products";
-    if (id) {
+    if(id && validateData(id,letterRegex)){
       tempUrl += "/category?type=" + id;
+      getProductList(tempUrl);
+    }else {
+      alert("Invalid data")
+      setLoader(false);
     }
-    getProductList(tempUrl);
   }, [id]);
 
   if (loader) {

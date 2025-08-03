@@ -46,7 +46,7 @@ Built with **10+ years of frontend experience**, this project is a responsive, t
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/my-app.git
+git clone https://github.com/pradeep3sep/Multi-Theme.git
 cd my-app
 ````
 
@@ -140,6 +140,13 @@ useEffect(() => {
   fetchData().finally(() => setLoading(false));
 }, [id]);
 ```
+
+## 🔒 Security Enhancements
+
+* Implemented **security validation** for:
+
+  * **URL parameters** to prevent injection or malformed requests
+  * **User input fields** to ensure proper sanitization and avoid XSS or script injection
 
 ## 🧼 Code Quality
 

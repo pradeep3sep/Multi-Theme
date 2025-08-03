@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { validateData } from "../lib/utils";
+import { emailRegex, letterRegex } from "../constant";
 
 const Contact = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -9,9 +11,17 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", form);
-    alert("Message sent!"); // Temporary feedback
-    setForm({ name: "", email: "", message: "" });
+    const isNameValid:boolean = validateData(form.name,letterRegex)
+    const isEmail:boolean = validateData(form.email,emailRegex)
+    const isMessage:boolean = validateData(form.message,letterRegex) 
+
+    if(isNameValid && isEmail && isMessage){
+      console.log("Form submitted:", form);
+      alert("Message sent!"); // Temporary feedback
+      setForm({ name: "", email: "", message: "" });
+    }else {
+      alert("Please share correct details")
+    }
   };
 
   return (
